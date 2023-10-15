@@ -22,6 +22,19 @@ public class PrincipalDetails  implements UserDetails {
         this.user = user;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (obj instanceof PrincipalDetails) {
+            return this.user.getUsername().equals(((PrincipalDetails)obj).getUsername());
+        }
+        return false;
+    }
+
+    @Override
+    public int hashCode() {
+        return this.user.getUsername().hashCode();
+    }
+
     // 해당 user의 권한을 반환
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {

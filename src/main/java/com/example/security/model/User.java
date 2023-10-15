@@ -22,4 +22,5 @@ public class User {
     private String role;
     @CreationTimestamp
     private Timestamp createDate;
+
 }
